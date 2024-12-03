@@ -19,7 +19,7 @@ return {
     config = function()
       local config = require("mason-lspconfig")
       config.setup({
-        ensure_installed = { "lua_ls", "angularls", "ts_ls", "html", "cssls", "tailwindcss", "docker_compose_language_service", "dockerls", "golangci_lint_ls", "pyright", "bashls" }
+        ensure_installed = { "lua_ls", "angularls", "ts_ls", "html", "cssls", "tailwindcss", "docker_compose_language_service", "dockerls", "pyright", "bashls" }
       })
     end
   },
@@ -36,7 +36,7 @@ return {
       lspconfig.tailwindcss.setup({})
       lspconfig.docker_compose_language_service.setup({})
       lspconfig.dockerls.setup({})
-      lspconfig.golangci_lint_ls.setup({})
+   -- lspconfig.golangci_lint_ls.setup({})
       lspconfig.pyright.setup({})
       lspconfig.bashls.setup({})
       
