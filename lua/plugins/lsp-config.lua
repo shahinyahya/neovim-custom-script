@@ -25,21 +25,45 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
+    lazy = false,
     config = function()
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
       local lspconfig = require("lspconfig")
       -- Server Spec settings
-      lspconfig.lua_ls.setup({})
-      lspconfig.angularls.setup({})
-      lspconfig.ts_ls.setup({})
-      lspconfig.html.setup({})
-      lspconfig.cssls.setup({})
-      lspconfig.tailwindcss.setup({})
-      lspconfig.docker_compose_language_service.setup({})
-      lspconfig.dockerls.setup({})
-   -- lspconfig.golangci_lint_ls.setup({})
-      lspconfig.pyright.setup({})
-      lspconfig.bashls.setup({})
-      
+      lspconfig.lua_ls.setup({
+        capabilities = capabilities
+      })
+      lspconfig.angularls.setup({
+        capabilities = capabilities
+      })
+      lspconfig.ts_ls.setup({
+        capabilities = capabilities
+      })
+      lspconfig.html.setup({
+        capabilities = capabilities
+      })
+      lspconfig.cssls.setup({
+        capabilities = capabilities
+      })
+      lspconfig.tailwindcss.setup({
+        capabilities = capabilities
+      })
+      lspconfig.docker_compose_language_service.setup({
+        capabilities = capabilities
+      })
+      lspconfig.dockerls.setup({
+        capabilities = capabilities
+      })
+   -- lspconfig.golangci_lint_ls.setup({
+      --  capabilities = capabilities
+      -- })
+      lspconfig.pyright.setup({
+        capabilities = capabilities
+      })
+      lspconfig.bashls.setup({
+        capabilities = capabilities
+      })
       --Keybindings for lsp-config
       vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
