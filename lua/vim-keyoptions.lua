@@ -13,3 +13,7 @@ vim.keymap.set({'n', 'v'}, '<leader>[', ':bp<CR>', {silent = true})
 -- Key option for editor and editor side
 vim.keymap.set({'n', 'v'}, '<C-k>', ':wincmd l<CR>', {})
 vim.keymap.set({'n', 'v'}, '<C-j>', ':Neotree focus<CR>', {})
+-- Keys for pane split
+vim.keymap.set({'n', 'v'}, '<leader>v', ':vs<CR>', {})
+vim.keymap.set({'n', 'v'}, '<leader>vv', ':sp<CR>', {})
+
