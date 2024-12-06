@@ -4,6 +4,15 @@ vim.opt.number = true
 vim.opt.clipboard = 'unnamedplus'
 -- vim.opt.relativenumber = true
 
+-- In your init.lua or general settings
+vim.opt.mouse = 'a'
+vim.opt.selection = 'exclusive'
+vim.opt.clipboard = 'unnamedplus'
+vim.opt.smoothscroll = true
+vim.g.loaded_matchparen = 1
+vim.opt.redrawtime = 1500
+vim.opt.synmaxcol = 400
+
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
