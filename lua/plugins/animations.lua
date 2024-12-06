@@ -49,21 +49,40 @@ return {
 	{
 		"echasnovski/mini.animate",
 		config = function()
-			local animate = require("mini.animate")
+			local animate = require('mini.animate')
 			animate.setup({
 				cursor = {
 					enable = true,
-					timing = animate.gen_timing.linear({ duration = 30, unit = "total" }), -- Faster duration
-					path = animate.gen_path.line(), -- Straight line path like VSCode
+					timing = animate.gen_timing.linear({ duration = 30, unit = 'total' }),
+					path = animate.gen_path.line()
 				},
 				scroll = {
 					enable = true,
-					timing = animate.gen_timing.linear({ duration = 100, unit = "total" }),
+					timing = animate.gen_timing.linear({ duration = 100, unit = 'total' }),
+					subscroll = animate.gen_subscroll.equal({ max_output_steps = 20 })
 				},
 				resize = { enable = false },
 				open = { enable = false },
-				close = { enable = false },
+				close = { enable = false }
 			})
-		end,
-	},
+	
+			-- VSCode-like cursor settings
+			vim.opt.guicursor = "n-v-c:block-Cursor/lCursor-blinkwait300-blinkoff200-blinkon200," ..
+							   "i-ci-ve:ver25-Cursor/lCursor-blinkwait300-blinkoff200-blinkon200," ..
+							   "r-cr:hor20," ..
+							   "o:hor50"
+	
+			-- Cursor highlights
+			vim.cmd([[
+				highlight Cursor guifg=white guibg=#61afef
+				highlight iCursor guifg=white guibg=#61afef
+			]])
+	
+			-- Performance settings
+			vim.opt.updatetime = 50
+			vim.opt.timeoutlen = 300
+			vim.opt.ttimeoutlen = 0
+			vim.opt.cursorline = true
+		end
+	}
 }
