@@ -5,15 +5,17 @@ vim.cmd("set shiftwidth=2")
 vim.g.mapleader = " "
 
 -- Custom Keybindings
-vim.keymap.set({'n', 'v'}, '<TAB>', ':bn<CR>', {silent = true})
-vim.keymap.set({'n', 'v'}, '<S-TAB>', ':bp<CR>', {silent = true})
-vim.keymap.set({'n','v'}, '<leader>c', ':bd<CR>', {silent = true})
-vim.keymap.set({'n', 'v'}, '<leader>]', ':bn<CR>', {silent =true})
-vim.keymap.set({'n', 'v'}, '<leader>[', ':bp<CR>', {silent = true})
+vim.keymap.set({ "n", "v" }, "<TAB>", ":bn<CR>", { silent = true })
+vim.keymap.set({ "n", "v" }, "<S-TAB>", ":bp<CR>", { silent = true })
+vim.keymap.set({ "n", "v" }, "<leader>c", ":bd<CR>", { silent = true })
+vim.keymap.set({ "n", "v" }, "<leader>]", ":bn<CR>", { silent = true })
+vim.keymap.set({ "n", "v" }, "<leader>[", ":bp<CR>", { silent = true })
 -- Key option for editor and editor side
-vim.keymap.set({'n', 'v'}, '<C-k>', ':wincmd l<CR>', {})
-vim.keymap.set({'n', 'v'}, '<C-j>', ':Neotree focus<CR>', {})
+vim.keymap.set({ "n", "v" }, "<C-k>", ":wincmd l<CR>", {})
+vim.keymap.set({ "n", "v" }, "<C-j>", ":Neotree focus<CR>", {})
 -- Keys for pane split
-vim.keymap.set({'n', 'v'}, '<leader>v', ':vs<CR>', {})
-vim.keymap.set({'n', 'v'}, '<leader>vv', ':sp<CR>', {})
-
+vim.keymap.set({ "n", "v" }, "<leader>v", ":vs<CR>", {})
+vim.keymap.set({ "n", "v" }, "<leader>vv", ":sp<CR>", {})
+-- Line up/down keybindings
+vim.keymap.set('n', '1', ':m .-2<CR>==', {silent = true})
+vim.keymap.set('n', '2', ':m .+1<CR>==', {silent = true})
