@@ -19,3 +19,4 @@ vim.keymap.set({ "n", "v" }, "<leader>vv", ":sp<CR>", {})
 -- Line up/down keybindings
 vim.keymap.set('n', '1', ':m .-2<CR>==', {silent = true})
 vim.keymap.set('n', '2', ':m .+1<CR>==', {silent = true})
+vim.keymap.set('n', 'm', ':t .<CR>==', {silent = true})
